@@ -50,7 +50,7 @@ const resolvers = {
             if (context.user) {
                 // const savedBooks = await Book.findOneandUpdate({ ...args, username: context.user.username });
 
-                await User.findByIdAndUpdate(
+                const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
                     { $push: { savedBooks: bookData } },
                     { new: true }
@@ -66,7 +66,7 @@ const resolvers = {
             if (context.user) {
                 // const saveBdooks = await Book.findOneandUpdate({ ...args, username: context.user.username });
 
-                await User.findByIdAndUpdate(
+                const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
                     { $pull: { savedBooks: {bookId: bookId} } },
                     { new: true }
