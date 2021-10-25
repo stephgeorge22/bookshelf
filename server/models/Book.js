@@ -26,6 +26,14 @@ const bookSchema = new Schema({
     type: String,
     required: true,
   },
+  addedBy: {
+    type: String, 
+    required: true
+  }, 
+  addedAt: {
+    type: Date, 
+    default: Date.now
+  }
 });
 
 module.exports = bookSchema;
